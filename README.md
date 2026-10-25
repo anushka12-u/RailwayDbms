@@ -82,15 +82,15 @@ DB_NAME=railway_management
 | `DB_PASSWORD` | Yes | MySQL password | `your_mysql_password` |
 | `DB_NAME` | Yes | MySQL database name | `railway_management` |
 
-### Frontend variable
+### Frontend API URL
 
-The Streamlit frontend uses `RAILWAY_API_URL` to locate the FastAPI backend. If it is not provided, it defaults to `http://127.0.0.1:8000`.
+The Streamlit frontend uses `RAILWAY_API_URL` to locate the FastAPI backend. This is the only frontend environment variable set in the terminal before starting Streamlit. If it is not provided, it defaults to `http://127.0.0.1:8000`.
 
 ```env
 RAILWAY_API_URL=http://127.0.0.1:8000
 ```
 
-For local development, the API default is sufficient. If you use a different host or port, set the variable in the terminal before starting Streamlit.
+For local development, the API default is sufficient. If you use a different host or port, set the variable in the terminal before starting Streamlit. The frontend itself is started locally from the terminal with `streamlit run frontend/app.py` and is not exported.
 
 **Windows PowerShell:**
 
@@ -167,6 +167,8 @@ streamlit run frontend/app.py
 export RAILWAY_API_URL=http://127.0.0.1:8000
 streamlit run frontend/app.py
 ```
+
+The `streamlit run frontend/app.py` command starts the frontend locally.
 
 Streamlit will display a local URL, usually:
 
